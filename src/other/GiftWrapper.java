@@ -6,7 +6,7 @@ import java.util.List;
 
 public class GiftWrapper {
 
-    public static final double EPISLON = 1e-3;
+    public static final double EPISLON = 1e-7;
 
 
     public static List<Point> giftWrapper(List<Point> pointList){
@@ -22,28 +22,18 @@ public class GiftWrapper {
 
         List<Point> hull = new ArrayList<>();
 
-        Point firstPoint = pointList.get(leftMostIndex);
-        Point currentPoint = firstPoint;
-        Point nextPoint = pointList.get(1);
-
-        int currentPointIndex = leftMostIndex;
-
-        while(!firstPoint.equals(nextPoint)){
-            hull.add(currentPoint);
-
-            nextPoint = pointList.get((currentPointIndex + 1) % pointList.size()); //Choose any other starter index than currentPoint
+        int currentPoint = leftMostIndex;
+        int nextPoint;
+        do {
+            hull.add(pointList.get(currentPoint));
+            nextPoint = (currentPoint + 1) % pointList.size();
             for(int i = 0; i < pointList.size(); i++){
-                Point candidate = pointList.get(i);
-                System.out.println("Points: " + currentPoint + nextPoint + candidate + isCCW(currentPoint, nextPoint, candidate));
-                if (isCCW(currentPoint, nextPoint, candidate) < 0){
-                    System.out.println("Swapped");
-                    nextPoint = candidate;
-                    currentPointIndex = i;
+                if (isCCW(pointList.get(currentPoint), pointList.get(nextPoint), pointList.get(i)) > 0){
+                    nextPoint = i;
                 }
             }
-            System.out.println("-------------------");
             currentPoint = nextPoint;
-        }
+        } while(nextPoint != leftMostIndex);
         return hull;
     }
 
@@ -76,11 +66,9 @@ public class GiftWrapper {
         points[4]=new Point(3, 0);
         points[5]=new Point(0, 0);
         points[6]=new Point(3, 3);
-
         List<Point> inList = new ArrayList<>(Arrays.asList(points));
         System.out.println(giftWrapper(inList));
         System.out.println(isCCW(new Point(2, 2), new Point(2, 0), new Point(0,0 )));
-
     }
 
 }
