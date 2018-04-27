@@ -1,0 +1,12 @@
+2
+walnut
+chestnut
+1
+oak
+2
+abcd
+a
+3
+a
+b
+c

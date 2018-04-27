@@ -1,0 +1,55 @@
+3
+sam molly jim
+sam tim molly
+jim rex
+4
+candace rob john
+john tom
+rob tom
+candace tom jacob
+2
+arnold kevin june
+june reagan marsha
+6
+arnold pam
+pam sid
+sid dave
+jim arnold
+jim ryan
+ryan arnold
+3
+luke jim john
+val jim kim
+val luke kim john
+7
+a b c d e
+f g h i j k
+e f q r y
+l m n o p q
+r s t u v w x
+y z
+k l x y
+1
+a b c
+9
+a b
+c d
+e f
+g h
+i j k l
+b c
+d e
+f g
+h i
+6
+em brit kate dave
+john wayne steve kacy
+em john steve dave
+brit wayne kate
+john brit kacy dave
+steve kate kacy
+4
+e f
+f g
+g h
+a b c d e
