@@ -1,5 +1,7 @@
-package other;
+package practice;
 
+
+import other.Stack;
 
 import java.util.ArrayList;
 import java.util.List;
