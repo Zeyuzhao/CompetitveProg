@@ -4,6 +4,7 @@ package practice;
 import other.Stack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,14 +25,10 @@ public class PostFix {
         }
         throw new UnsupportedOperationException();
     }
-
-    public static double evaluate(String expression)
+    public static double evaluate(List<String> opList)
     {
-        String[] chunks = expression.split(" ");
-        List<String> opList = new ArrayList<>();
-
         Stack<Double> expMem = new Stack<>();
-        for (String item : chunks){
+        for (String item : opList){
             try {
                 double val = Double.parseDouble(item);
                 expMem.push(val);
@@ -48,6 +45,11 @@ public class PostFix {
             throw new IllegalStateException("Check your operators");
         }
         return expMem.peek();
+    }
+    public static double evaluate(String expression)
+    {
+        String[] chunks = expression.split(" ");
+        return evaluate(Arrays.asList(chunks));
     }
     public static void main(String[] args){
         Scanner reader = new Scanner(System.in);
