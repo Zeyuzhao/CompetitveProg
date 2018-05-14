@@ -19,7 +19,7 @@ public class PostFix {
 
             case "/": return a / b;
 
-            case "^": return Math.pow(b, a);
+            case "^": return Math.pow(a, b);
 
             case "%": return a % b;
         }
@@ -38,7 +38,7 @@ public class PostFix {
                 }
                 double a = expMem.pop();
                 double b = expMem.pop();
-                expMem.push(evaluator(a, b, item));
+                expMem.push(evaluator(b, a, item));
             }
         }
         if (expMem.size() != 1){

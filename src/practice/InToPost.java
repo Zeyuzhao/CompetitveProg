@@ -1,8 +1,18 @@
-import practice.PostFix;
+package practice;
 
 import java.util.*;
 
 public class InToPost {
+
+    /*
+    Current Bugs:
+    Cannot put unary operations, negative sign problems
+    Fix:
+    Use a different alphanumeric finder
+
+    Modulo has an big issue, check it out
+    Maybe modulo has a use a formatter string
+     */
     private HashMap<String, Integer> PREC = new HashMap<>();
 
     public InToPost()
