@@ -1,5 +1,8 @@
 package practice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RainWater {
     public static int trap(int[] bars) {
         int leftHighest = 0;
@@ -55,5 +58,13 @@ public class RainWater {
     public static void main(String[] args) {
         int[] bars1 = {0,1,0,2,1,0,1,3,2,1,2,1};
         System.out.println(trap(bars1));
+        List<String> list = new ArrayList<String>();
+        list.add("a");
+        list.add("b");
+        list.set(1,"c");
+        list.add(2, "d");
+        list.set(2, "e");
+        list.add("g");
+        System.out.println(list);
     }
 }
